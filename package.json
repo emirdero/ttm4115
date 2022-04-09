@@ -1,0 +1,16 @@
+{
+  "name": "quiz_server",
+  "version": "1.0.0",
+  "description": "a quiz server",
+  "main": "quiz_server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Emir Derouiche",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "express": "^4.17.3",
+    "sqlite3": "^5.0.2"
+  }
+}

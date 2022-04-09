@@ -1,0 +1,85 @@
+{
+  "questions": [
+    {
+      "id": 0,
+      "question": "Which company was established on April 1st, 1976 by Steve Jobs, Steve Wozniak and Ronald Wayne?",
+      "possible_answers": ["Microsoft", "Atari", "Commodore", "Apple"]
+    },
+    {
+      "id": 1,
+      "question": "What does CPU stand for?",
+      "possible_answers": [
+        "Central Process Unit",
+        "Computer Personal Unit",
+        "Central Processor Unit",
+        "Central Processing Unit"
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Nvidia&#039;s headquarters are based in which Silicon Valley city?",
+      "possible_answers": [
+        "Palo Alto",
+        "Cupertino",
+        "Mountain View",
+        "Santa Clara"
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What was the first commerically available computer processor?",
+      "possible_answers": ["Intel 486SX", "TMS 1000", "AMD AM386", "Intel 4004"]
+    },
+    {
+      "id": 4,
+      "question": "What does the acronym CDN stand for in terms of networking?",
+      "possible_answers": [
+        "Content Distribution Network",
+        "Computational Data Network",
+        "Content Delivery Network",
+        "Compressed Data Network"
+      ]
+    },
+    {
+      "id": 5,
+      "question": ".at is the top-level domain for what country?",
+      "possible_answers": ["Argentina", "Austria", "Australia", "Angola"]
+    },
+    {
+      "id": 6,
+      "question": "What is known as &quot;the brain&quot; of the Computer?",
+      "possible_answers": [
+        "Motherboard",
+        "Graphics Processing Unit",
+        "Keyboard",
+        "Central Processing Unit"
+      ]
+    },
+    {
+      "id": 7,
+      "question": "What does RAID stand for?",
+      "possible_answers": [
+        "Redundant Array of Independent Disks",
+        "Rapid Access for Indexed Devices",
+        "Range of Applications with Identical Designs",
+        "Randomized Abstract Identification Description"
+      ]
+    },
+    {
+      "id": 8,
+      "question": "What is the number of keys on a standard Windows Keyboard?",
+      "possible_answers": ["104", "64", "94", "76"]
+    },
+    {
+      "id": 9,
+      "question": "Which of these Cherry MX mechanical keyboard switches is both tactile and clicky?",
+      "possible_answers": [
+        "Cherry MX Black",
+        "Cherry MX Blue",
+        "Cherry MX Red",
+        "Cherry MX Brown"
+      ]
+    }
+  ],
+  "start": "2022-04-08 12:03:58"
+}
