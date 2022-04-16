@@ -89,7 +89,7 @@ app.get("/room/:room_id", (req, res) => {
 app.post("/room/:room_id", (req, res) => {
   // get all variables in order
   const room_id = parseInt(req?.params?.room_id);
-  const answers = req?.body?.answer;
+  const answers = req?.body?.answers;
   const name = req?.body?.name;
   // send error if room_id is not number, or name is not a string or answers is not an array
   if (
@@ -97,7 +97,7 @@ app.post("/room/:room_id", (req, res) => {
     (typeof answers != "object") |
     (typeof name != "string")
   ) {
-    res.status(400).send("Invalid room id, question id, name or answer");
+    res.status(400).send("Invalid room id, question id, name or answers");
     return;
   }
 
@@ -113,20 +113,35 @@ app.post("/room/:room_id", (req, res) => {
   res.send("Answers submitted");
 });
 
+// Get player score, TODO: make sure time has run out
 app.get("/score/:room_id/:player_name", (req, res) => {
+  const room_id = parseInt(req?.params?.room_id);
+  const player_name = req?.params?.player_name;
   // Get all the questions from the room
-  db.get("SELECT * FROM room WHERE room_id = " + room_id, function (err, row) {
-    if (err) {
-      res.status(500).send(err);
-    } else if (row === undefined) {
-      res.status(404).send("Room not found");
-    } else {
-      // Parse questions from text to json
-      row.correct_answers = JSON.parse(row.correct_answers);
-      if (row.correct_answers[question_id] == answer) res.send("correct");
-      else res.send("Incorrect");
+  db.get(
+    "SELECT * FROM player JOIN room USING(room_id) WHERE name=?;",
+    [player_name],
+    function (err, row) {
+      if (err) {
+        res.status(500).send(err);
+      } else if (row === undefined) {
+        res.status(404).send("Room not found");
+      } else {
+        // Parse questions from text to json
+        row.correct_answers = JSON.parse(row.correct_answers);
+        row.answers = JSON.parse(row.answers);
+        let points = 0;
+        for (let i = 0; i < row.correct_answers.length; i++) {
+          // Check if players answer is correct. Be carfull of formating of strings!
+          console.log(row.answers[i], row.correct_answers[i]);
+          if (row.answers[i] == row.correct_answers[i]) {
+            points += 1;
+          }
+        }
+        res.send("points: " + points);
+      }
     }
-  });
+  );
 });
 
 app.listen(port, () => {
